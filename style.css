@@ -1,0 +1,333 @@
+/* =========================
+   Willow Font
+   ========================= */
+
+@font-face {
+    font-family: "Willow";
+    src: url("font/Pia_font-Regular.otf") format("opentype");
+}
+
+/* =========================
+   Base Styles
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Willow", serif;
+    color: white;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("images/woods.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 40px 20px;
+
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+button,
+input,
+textarea {
+    font-family: "Willow", serif;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.content-container > p {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Text Inputs */
+
+input,
+textarea,
+button {
+    font-size: 1rem;
+}
+
+.content-container {
+    width: min(1400px, 100%);
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.panel-preview .content-container h3 {
+    text-align: center;
+}
+
+.try-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* --- Presets --- */
+.presets {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.preset {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.preset:hover {
+    border-color: #75ba52;
+    background: rgba(117, 186, 82, 0.15);
+    transform: translateY(-2px);
+}
+
+/* --- Download --- */
+.download {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#downloadBtn {
+    padding: 14px 32px;
+    border-radius: 12px;
+    background: #75ba52;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#downloadBtn:hover {
+    background: #a8e08c;
+    transform: translateY(-2px);
+}
+
+#userInput {
+    display: block;
+    width: 100%;
+    margin: 40px auto 20px auto;
+    padding: 18px;
+    font-size: 18px;
+    color: white;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#userInput:hover {
+    border-color: rgba(117, 186, 82, 0.6);
+}
+
+#userInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#userInput:focus {
+    outline: none;
+    border-color: #75ba52;
+}
+
+.workspace {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- Controls panel --- */
+.control-panel {
+    width: 320px;
+    flex-shrink: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.control-panel:hover {
+    transform: translateY(-6px);
+    border-color: #75ba52;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .35);
+}
+
+.control-panel h4 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.control {
+    margin-bottom: 25px;
+}
+
+.control label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 4px;
+}
+
+.control input {
+    width: 100%;
+}
+
+.control input[type="color"] {
+    height: 40px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.control input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #75ba52;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.control input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    background: #a8e08c;
+}
+
+.control input[type="range"]::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.control input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #75ba52;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.control input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.15);
+    background: #a8e08c;
+}
+
+/* --- Right preview panel wrapper --- */
+.preview-panel {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+}
+
+/* --- Live preview box --- */
+.preview-box {
+    flex: 1;
+    min-width: 0;
+    min-height: 220px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.2s ease;
+}
+
+.preview-box:hover {
+    border-color: rgba(117, 186, 82, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .35);
+}
+
+#preview {
+    margin: 0;
+    font-family: "Willow", serif;
+    font-size: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    color: white;
+}
+
+.animate {
+    animation: pop .25s;
+}
+
+@keyframes pop {
+    0% { transform: scale(.96); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 720px) {
+    .control-panel {
+        width: 100%;
+    }
+}
+ 
+
