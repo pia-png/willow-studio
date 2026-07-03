@@ -2,7 +2,7 @@
 
 Willow Studio is an interactive typography playground built to showcase **Willow**, my custom handwritten font. The website lets users experiment with it in real time, creating personalized designs and exporting them as images. It is a more developed version of the preview section of the original willow website. 
 
-## ✨ Features
+## Features
 
 * Live text preview
 * Adjustable font size
